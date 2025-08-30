@@ -1,0 +1,45 @@
+package com.cg.casestudy.bookingmanagement.model;
+
+import java.io.Serializable;
+import java.util.List;
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Document(collection = "bookings")
+@ToString
+public class Booking implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@NotEmpty(message = "id must not be empty")
+	private String id;
+	@NotEmpty(message = "pnrNo must not be empty")
+	private String pnrNo;
+	@Valid
+	private Flight flight;
+	@Valid
+	private List<Passenger> passengerList;
+	@NotEmpty(message = "date must not be empty")
+	private String date;
+	@NotNull
+	private boolean active;
+	@NotNull(message = "userId must not be empty")
+	private String email;
+
+}

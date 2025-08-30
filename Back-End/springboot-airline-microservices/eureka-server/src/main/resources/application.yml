@@ -1,0 +1,14 @@
+server:
+    port: 8761   # Eureka server will run on this port
+
+spring:
+    application:
+        name: eureka-server
+
+eureka:
+    client:
+        register-with-eureka: false   # Do not register itself
+        fetch-registry: false         # Do not fetch registry
+    server:
+        enable-self-preservation: false   # (optional) better for dev/testing
+        eviction-interval-timer-in-ms: 5000
