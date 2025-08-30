@@ -1,0 +1,26 @@
+{
+  "name": "flight-booking-application",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "Front-End/React/flight-booking"
+  ],
+  "scripts": {
+    "install-all": "npm install --workspaces && cd Front-End/React/auth-service && npm install && cd ../payment-service && npm install",
+
+    "auth": "node Front-End/React/auth-service/auth.js",
+    "payment": "node Front-End/React/payment-service/payment.js",
+    "booking": "npm start --workspace flight-booking",
+
+    "build:booking": "npm run build --workspace flight-booking",
+
+    "serve:booking": "npx serve -s Front-End/React/flight-booking/build -l 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
