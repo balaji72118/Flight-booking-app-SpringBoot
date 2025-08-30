@@ -11,6 +11,7 @@
     "auth": "node Front-End/React/auth-service/auth.js",
     "payment": "node Front-End/React/payment-service/payment.js",
     "booking": "npm start --workspace flight-booking",
+    "build": "npm run build:booking",
 
     "build:booking": "npm run build --workspace flight-booking",
 
