@@ -1,6 +1,7 @@
 {
   "name": "flight-booking",
   "version": "0.1.0",
+  "homepage": "https://balaji72118.github.io/flight-booking-application",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.3.0",
@@ -25,7 +26,9 @@
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "react-scripts": "^5.0.1",
     "webpack": "^5.101.3"
   }
